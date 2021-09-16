@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Лаба1</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:wght@700&family=Source+Sans+Pro:wght@600&display=swap');
+        html {
+            color: #AEC1BB;
+            background: #3A213F;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+        }
+        .footer {
+            text-align: center;
+        }
+        .invert-colors {
+            background: #AEC1BB;
+            color: #3A213F;
+        }
+        .box-visual, .indent-box {
+            padding: 43px;
+            border-radius: 20px;
+        }
+        .indent-box {
+            margin: 43px;
+            background-color: #241228;
+        }
+        .box-visual, .main-structure-table {
+            width: 100%;
+        }
+        .text-input {
+            width: 80%;
+        }
+        .main-structure-table {
+            display: block;
+        }
+        td {
+            vertical-align: top;
+        }
+        .mew {
+            font-style: italic;
+        }
+        .main-title {
+            font-size: 3rem;
+            font-family: 'Jost', sans-serif;
+        }
+        .prompt-text {
+            font-size: 1.2rem;
+        }
+        .control-panel {
+            padding: 20px;
+        }
+        .text-input, button {
+            border-radius: 50rem;
+            padding: 10px 20px;
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+            border: none;
+        }
+        .text-input:hover, .text-input:focus, button:hover {
+            background-color: white;
+            box-shadow: 10px 10px 5px 5px rgba(34, 16, 38, 0.25);
+        }
+        .reset-colors:hover {
+            background-color: #e8b3b3;
+        }
+        .text-input, .logo, .box-visual, button, hr {
+            box-shadow: 5px 5px 5px 5px rgba(34, 16, 38, 0.25);
+        }
+        .shadow-graph{
+            filter: drop-shadow(5px 5px 5px rgba(34, 16, 38, 0.25));
+        }
+        .result-table {
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+        }
+        .logo {
+            border-radius: 50rem;
+            margin: 25px;
+        }
+        .confirm-colors {
+            color: #3A213F;
+            background-color: mediumspringgreen;
+        }
+        .reset-colors {
+            color: #3A213F;
+            background-color: palevioletred;
+        }
+        .content {
+            max-width: 1200px;
+            margin: 80px auto;
+        }
+        button {
+            margin: 5px;
+        }
+        .indent-box {
+            box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+        }
+        .graph-container{
+            margin: auto;
+        }
+        .result-table {
+            width: 100%;
+            text-align: center;
+            border-radius: 20px;
+            background-color: #3A213F;
+            padding: 10px;
+        }
+        .incorrect-input-notif {
+            color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+<table class="main-structure-table">
+    <thead>
+    <tr>
+        <td>
+            <img src="assets/EDITOR2.png" width="300" class="logo shadow" alt="logo">
+        </td>
+        <td class="invert-colors box-visual shadow">
+            <h1 class="main-title">ЛАБКА-ЛЯГУЖАБКА 1</h1>
+            <h3>Глушков Даниил, P3233, вариант 33005</h3>
+            <p class="mew">(мяв котики хе)</p>
+        </td>
+    </tr>
+    <tr><td colspan="2"><br></td></tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="control-panel">
+            <img src="assets/task.png" width="300" class="graph-container shadow-graph" alt="график!!!!">
+            <hr>
+            <div class="X_select">
+                <p class="prompt-text">Выбираем X:</p>
+                <table class="box-visual invert-colors">
+                    <tr>
+                        <td>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x1">-5</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x2">-4</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x3">-3</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x4">-2</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x5">-1</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x6">0</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x7">1</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x8">2</label>
+                            </div>
+                            <div class="choose_tbox">
+                                <label><input type="checkbox" id="cbx_x9">3</label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="incorrect-input-notif" id="x_inc"></p>
+            </div>
+            <div class="Y_select">
+                <p class="prompt-text">Выбираем Y (-5 ... 5):</p>
+                <label><input type="text" placeholder="Введите число..." id="tbx_y" class="text-input invert-colors"></label>
+                <p class="incorrect-input-notif" id="y_inc"></p>
+            </div>
+            <div class="R_select">
+                <p class="prompt-text">Выбираем R:</p>
+                <table class="box-visual invert-colors">
+                    <tr>
+                        <td>
+                            <div class="choose_radio">
+                                <label> <input type="radio" name="R" id="radio_r1"> 1 </label>
+                            </div>
+                            <div class="choose_radio">
+                                <label> <input type="radio" name="R" id="radio_r2"> 2 </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="choose_radio">
+                                <label> <input type="radio" name="R" id="radio_r3"> 3 </label>
+                            </div>
+                            <div class="choose_radio">
+                                <label> <input type="radio" name="R" id="radio_r4"> 4 </label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="choose_radio">
+                                <label> <input type="radio" name="R" id="radio_r5"> 5 </label>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <p class="incorrect-input-notif" id="r_inc"></p>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <button type="button" class="confirm-colors" id="btn_cfm" onclick="sendButton()">Отправляем!</button>
+            <button type="button" class="reset-colors" id="btn_rst" onclick="sendReset()">Ресет</button>
+        </td>
+        <td class="indent-box">
+            <table class="result-table">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Входит?</th>
+                    <th>Время</th>
+                    <th>Выполнение</th>
+                </tr>
+                <tr>
+                    <th colspan="6"><hr></th>
+                </tr>
+                </thead>
+                <tbody id="table-place">
+
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <p class="footer">2021</p>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<script type="text/javascript" src="script/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="script/script.js"></script>
+</body>
+</html>
